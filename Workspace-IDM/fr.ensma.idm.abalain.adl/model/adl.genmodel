@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/fr.ensma.idm.abalain.adl/src-gen" creationIcons="false"
+    editDirectory="/fr.ensma.idm.abalain.adl.edit/src-gen" editorDirectory="/fr.ensma.idm.abalain.adl.editor/src-gen"
+    modelPluginID="fr.ensma.idm.abalain.adl" modelName="Adl" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>adl.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Adl" basePackage="fr.ensma.idm.abalain" disposableProviderFactory="true"
+      ecorePackage="adl.ecore#/">
+    <genClasses image="false" ecoreClass="adl.ecore#//NamedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute adl.ecore#//NamedElement/name"/>
+    </genClasses>
+    <genClasses ecoreClass="adl.ecore#//System">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference adl.ecore#//System/process"/>
+    </genClasses>
+    <genClasses ecoreClass="adl.ecore#//Process">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference adl.ecore#//Process/thread"/>
+    </genClasses>
+    <genClasses ecoreClass="adl.ecore#//Thread">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference adl.ecore#//Thread/function"/>
+    </genClasses>
+    <genClasses ecoreClass="adl.ecore#//Function">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference adl.ecore#//Function/outCom"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference adl.ecore#//Function/inCom"/>
+    </genClasses>
+    <genClasses ecoreClass="adl.ecore#//Communication">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute adl.ecore#//Communication/synchronous"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference adl.ecore#//Communication/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference adl.ecore#//Communication/dest"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

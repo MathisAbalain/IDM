@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<adl:System
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:adl="http://www.ensma.fr/idm/abalain/adl"
+    xsi:schemaLocation="http://www.ensma.fr/idm/abalain/adl adl.ecore">
+  <process name="P1"/>
+  <process name="P2">
+    <thread
+        name="T1">
+      <function
+          name="F1">
+        <outCom
+            name="C1-2"
+            source="//@process.1/@thread.0/@function.0"
+            dest="//@process.1/@thread.0/@function.1"/>
+      </function>
+      <function
+          name="F2"
+          inCom="//@process.1/@thread.0/@function.0/@outCom.0"/>
+    </thread>
+    <thread
+        name="T2">
+      <function
+          name="F3"/>
+      <function
+          name="F4"/>
+    </thread>
+  </process>
+  <process name="P3"/>
+</adl:System>
